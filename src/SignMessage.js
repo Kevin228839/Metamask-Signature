@@ -12,6 +12,7 @@ const SignMessage = () => {
       if (!window.ethereum) {
         throw new Error('No crypto wallet found! Please install it!');
       }
+      // pop up metamask 登入介面
       await window.ethereum.send('eth_requestAccounts');
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
